@@ -100,7 +100,7 @@ function create_navbar($parent, $level ) {
 						GROUP BY parent
 					) Deriv1 ON a.id = Deriv1.parent
 				WHERE a.parent=" . $parent);
-    var_dump(Auth::guest());
+
 
 
     echo "<ul class='nav navbar-nav'>";
