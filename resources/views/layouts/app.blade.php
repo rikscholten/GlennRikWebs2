@@ -2,6 +2,7 @@
 @include('session')
 
 
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -59,6 +60,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
+                        <?php create_navbar(0,1);?>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -83,3 +85,20 @@
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
+
+<?php function create_navbar($parent, $level ) {
+    $result = DB::statement("SELECT a.id, a.label, a.link, Deriv1.Count FROM `menu` a
+LEFT OUTER JOIN (SELECT parent, COUNT(*) AS Count FROM `menu` GROUP BY parent) Deriv1
+ON a.id = Deriv1.parent WHERE a.parent=" . $parent);
+    echo "<ul>";
+    while ($row = $result->fetch_assoc()) {
+        if ($row['Count'] > 0) {
+            echo "<li><a href='" . $row['link'] . "'>" . $row['label'] . "</a>";
+            display_children($row['id'], $level + 1 , $database);
+            echo "</li>";
+        } elseif ($row['Count']==0) {
+            echo "<li><a href='" . $row['link'] . "'>" . $row['label'] . "</a></li>";
+        } else;
+    }
+    echo "</ul>";
+}?>
