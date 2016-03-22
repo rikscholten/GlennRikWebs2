@@ -16,8 +16,9 @@ class CreateMenuItems extends Migration
             $table->increments('id');
             $table->string('label');
             $table->string('link');
-            $table->int('parent');
-            $table->int('sort');
+            $table->integer('parent');
+            $table->integer('sort');
+            $table->boolean('admin');
             $table->timestamps();
         });
 

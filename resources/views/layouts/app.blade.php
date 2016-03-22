@@ -51,7 +51,8 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+
+                    <?php create_navbar(0,1) ; ?>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -60,7 +61,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
-                        <?php create_navbar(0,1);?>
+
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -86,19 +87,27 @@
 </body>
 </html>
 
+
+
 <?php function create_navbar($parent, $level ) {
-    $result = DB::statement("SELECT a.id, a.label, a.link, Deriv1.Count FROM `menu` a
-LEFT OUTER JOIN (SELECT parent, COUNT(*) AS Count FROM `menu` GROUP BY parent) Deriv1
-ON a.id = Deriv1.parent WHERE a.parent=" . $parent);
-    echo "<ul>";
-    while ($row = $result->fetch_assoc()) {
-        if ($row['Count'] > 0) {
-            echo "<li><a href='" . $row['link'] . "'>" . $row['label'] . "</a>";
-            display_children($row['id'], $level + 1 , $database);
+    $result = DB::select("SELECT a.id, a.label, a.link, Deriv1.Count
+				FROM `menu` a
+					LEFT OUTER JOIN (
+            SELECT parent, COUNT(*) AS Count
+						FROM `menu`
+						GROUP BY parent
+					) Deriv1 ON a.id = Deriv1.parent
+				WHERE a.parent=" . $parent);
+
+
+    foreach ($result as $row) {
+        if ($row->Count > 0) {
+            echo "<li><a href='" . $row->link . "'>" . $row->label . "</a>";
+            create_navbar($row->id, $level + 1 );
             echo "</li>";
-        } elseif ($row['Count']==0) {
-            echo "<li><a href='" . $row['link'] . "'>" . $row['label'] . "</a></li>";
+        } elseif ($row->Count ==0) {
+            echo "<li><a href='" . $row->link . "'>" . $row->label . "</a></li>";
         } else;
     }
-    echo "</ul>";
+
 }?>
