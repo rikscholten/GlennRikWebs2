@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet" type='text/css'>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -90,7 +90,7 @@
 
 
 <?php function create_navbar($parent, $level ) {
-    $result = DB::select("SELECT a.id, a.label, a.link, Deriv1.Count
+    $result = DB::select("SELECT a.id, a.label, a.link, a.admin, Deriv1.Count
 				FROM `menu` a
 					LEFT OUTER JOIN (
             SELECT parent, COUNT(*) AS Count
@@ -100,6 +100,9 @@
 				WHERE a.parent=" . $parent);
     echo "<ul class='nav navbar-nav'>";
     foreach ($result as $row) {
+        if($row->admin == 1 && Auth::guest()){
+          break;
+        }
         if ($row->Count > 0) {
             echo "<li><a href='" . $row->link . "'>" . $row->label . "</a>";
             create_navbar($row->id, $level + 1 );
