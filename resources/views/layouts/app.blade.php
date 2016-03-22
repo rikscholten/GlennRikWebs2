@@ -50,10 +50,10 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
 
-                    <?php create_navbar(0,1) ; ?>
-                </ul>
+                <?php create_navbar(0, 1); ?>
+
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -98,8 +98,7 @@
 						GROUP BY parent
 					) Deriv1 ON a.id = Deriv1.parent
 				WHERE a.parent=" . $parent);
-
-
+    echo "<ul class='nav navbar-nav'>";
     foreach ($result as $row) {
         if ($row->Count > 0) {
             echo "<li><a href='" . $row->link . "'>" . $row->label . "</a>";
@@ -109,5 +108,6 @@
             echo "<li><a href='" . $row->link . "'>" . $row->label . "</a></li>";
         } else;
     }
-
-}?>
+    echo "</ul>";
+}
+?>
