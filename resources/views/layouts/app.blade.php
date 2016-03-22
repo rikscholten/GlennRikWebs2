@@ -51,6 +51,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
 
+
                 <?php create_navbar(0, 1); ?>
 
 
@@ -89,7 +90,8 @@
 
 
 
-<?php function create_navbar($parent, $level ) {
+<?php
+function create_navbar($parent, $level ) {
     $result = DB::select("SELECT a.id, a.label, a.link, a.admin, Deriv1.Count
 				FROM `menu` a
 					LEFT OUTER JOIN (
@@ -100,9 +102,9 @@
 				WHERE a.parent=" . $parent);
     echo "<ul class='nav navbar-nav'>";
     foreach ($result as $row) {
-        if($row->admin == 1 && Auth::guest()){
-          break;
-        }
+        if($row->admin != 1  ){
+
+
         if ($row->Count > 0) {
             echo "<li><a href='" . $row->link . "'>" . $row->label . "</a>";
             create_navbar($row->id, $level + 1 );
@@ -111,6 +113,9 @@
             echo "<li><a href='" . $row->link . "'>" . $row->label . "</a></li>";
         } else;
     }
+        }
+
     echo "</ul>";
+
 }
 ?>
