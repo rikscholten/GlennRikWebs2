@@ -10,10 +10,24 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/store', function () {
+    $product = new Product();
+    $product->naam = "hello";
+    $product->artiest ="adelle";
+    $product->beschrijving ="dit is een numer";
+    $product->korte_beschrijving = "korte bes";
+    $product->categorie = "muziek";
+    $product->prijs = 12;
+    $data['products'] = $product;
+    return view('store',$data);
+});
+
 
 /*
 |--------------------------------------------------------------------------

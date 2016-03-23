@@ -1,17 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Store</div>
 
-                    <div class="panel-body">
-                        Producten
-                    </div>
+
+
+<h1 class="ui centered aligned header">Gameconsole Webshop</h1>
+
+<div class="ui cards">
+
+    @foreach ($products as $product)
+        <div class="card">
+            <div class="content">
+                <a class="header" href="product/{{ $product->id }}">{{ $product->naam }}</a>
+
+                <div class="extra content">
+                    €{{ $product->prijs }}
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
+
+
+</div>
+
+
 @endsection
