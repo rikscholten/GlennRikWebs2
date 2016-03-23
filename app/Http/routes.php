@@ -12,18 +12,10 @@
 */
 use App\Product;
 
-Route::get('/', function () {
-
-    if(Auth::user() == null){
-
-        return view('welcome');
-    }
-    return view('home');
-});
 
 
-Route::get('/store', 'ProductController@store');
-Route::get('/product/{id?}', 'ProductController@product');
+
+
 
 
 /*
@@ -38,13 +30,24 @@ Route::get('/product/{id?}', 'ProductController@product');
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', function () {
+
+        try {
+            Auth::user()->name;
+            return view('home');
+        } catch (Exception $e) {
+            return view('welcome');
+        }
+    });
+
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/store', 'ProductController@store');
+    Route::get('/product/{id?}', 'ProductController@product');
 });
 
 
