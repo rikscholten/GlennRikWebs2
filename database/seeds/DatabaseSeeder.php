@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\MenuItem;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,9 +25,27 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
+        //fill database with users
         DB::table('users')->delete();
 
         User::create(array('email' => 'foo@bar.com' ,'name' => 'admin' , 'password' => 'admin'));
+
+        //fill database with navugationbar menu items
+        DB::table('menu')->delete();
+
+
+        $menu_item =(array('label' => 'Home', 'link'=> '/home' , 'parent' => 0, 'sort' => 0, 'admin' => 0 ));
+        DB::table('menu')->insert($menu_item);
+
+        $menu_item =(array('label' => 'Store', 'link'=> '/store' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
+        DB::table('menu')->insert($menu_item);
+
+        $menu_item =(array('label' => 'Admin', 'link'=> '/admin' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
+        DB::table('menu')->insert($menu_item);
+
+        $menu_item =(array('label' => 'subitem', 'link'=> '/admin/sub' , 'parent' => 5, 'sort' => 0, 'admin' => 1 ));
+        DB::table('menu')->insert($menu_item);
+
 
     }
 

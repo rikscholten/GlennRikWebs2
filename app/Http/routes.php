@@ -10,10 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Product;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +30,24 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', function () {
+
+        try {
+            Auth::user()->name;
+            return view('home');
+        } catch (Exception $e) {
+            return view('welcome');
+        }
+    });
+
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/store', 'ProductController@store');
+    Route::get('/product/{id?}', 'ProductController@product');
 });
+
+
