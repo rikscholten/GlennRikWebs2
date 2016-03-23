@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="bootstrap.min.css" rel="stylesheet" type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -115,7 +115,7 @@ break;
 
 
         if ($row->Count > 0) {
-            echo "<li><a href='" . $row->link . "'>" . $row->label . "</a>";
+            echo "<li><a href='".url('/login')."'>" . $row->label . "</a>";
             create_navbar($row->id, $level + 1 );
             echo "</li>";
         } elseif ($row->Count ==0) {

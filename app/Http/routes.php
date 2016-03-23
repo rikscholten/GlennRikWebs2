@@ -21,7 +21,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/home', 'HomeController@index');
 
 Route::get('/store', 'ProductController@store');
 Route::get('/product/{id?}', 'ProductController@product');

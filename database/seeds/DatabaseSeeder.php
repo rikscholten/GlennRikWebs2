@@ -34,13 +34,13 @@ class UserTableSeeder extends Seeder {
         DB::table('menu')->delete();
 
 
-        $menu_item =(array('label' => 'Home', 'link'=> '/Home' , 'parent' => 0, 'sort' => 0, 'admin' => 0 ));
+        $menu_item =(array('label' => 'Home', 'link'=> '/home' , 'parent' => 0, 'sort' => 0, 'admin' => 0 ));
 DB::table('menu')->insert($menu_item);
 
-        $menu_item =(array('label' => 'Admin', 'link'=> '/Admin' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
+        $menu_item =(array('label' => 'Admin', 'link'=> '/admin' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
         DB::table('menu')->insert($menu_item);
 
-        $menu_item =(array('label' => 'subitem', 'link'=> '/Admin/sub' , 'parent' => 1, 'sort' => 0, 'admin' => 1 ));
+        $menu_item =(array('label' => 'subitem', 'link'=> '/admin/sub' , 'parent' => 1, 'sort' => 0, 'admin' => 1 ));
         DB::table('menu')->insert($menu_item);
     }
 

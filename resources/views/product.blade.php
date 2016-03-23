@@ -5,21 +5,21 @@
 
 
 
-  <h1 class="ui centered aligned header">Muziek shop</h1>
+  <h1  class="ui centered aligned header">Muziek shop</h1>
 
-  <div class="ui cards">
 
-    <h1 class="ui centered aligned header">{{ $product->naam }}</h1>
 
-    <p><a href="../">Terug</a></p>
-    naam: {{$product->naam}} <br />
-    artiest: {{$product->artiest}} <br />
-    Beschrijving: {{ $product->beschrijving }}<br />
-    Categorie: {{$product->categorie}} <br />
-    release date: {{$product->release}} <br />
-    Prijs: € {{ $product->prijs}},00 <br />
+    <h3 class="ui centered aligned header">{{ $product->naam }}</h3>
 
-  </div>
+
+   <b> naam:</b> {{$product->naam}} <br />
+  <b> artiest: </b>{{$product->artiest}} <br />
+      <b> Beschrijving:</b> {{ $product->beschrijving }}<br />
+          <b> Categorie: </b>{{$product->categorie}} <br />
+              <b> release date: </b>{{$product->release}} <br />
+                  <b> Prijs: </b> € {{ $product->prijs}},00 <br />
+  <p><a href="../">Terug</a></p>
+
 
 
 @endsection
