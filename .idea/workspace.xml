@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7be6ef3-853d-4c3a-bd34-524d46f0ab6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/product.blade.php" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" />
     </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,12 +27,12 @@
       <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63414633">
-              <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.902439">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding>
-                <marker date="1458760625573" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
-                <marker date="1458760625573" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
-                <marker date="1458760625573" expanded="true" signature="3772:4093" placeholder="..." />
+                <marker date="1458760718860" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
+                <marker date="1458760718860" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
+                <marker date="1458760718860" expanded="true" signature="3772:4097" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -543,9 +540,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1458760625573" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
-            <marker date="1458760625573" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
-            <marker date="1458760625573" expanded="true" signature="3772:4093" placeholder="..." />
+            <marker date="1458760718860" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
+            <marker date="1458760718860" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
+            <marker date="1458760718860" expanded="true" signature="3772:4097" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -555,9 +552,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1458760625573" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
-            <marker date="1458760625573" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
-            <marker date="1458760625573" expanded="true" signature="3772:4093" placeholder="..." />
+            <marker date="1458760718860" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
+            <marker date="1458760718860" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
+            <marker date="1458760718860" expanded="true" signature="3772:4097" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -886,12 +883,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63414633">
-          <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.902439">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
-            <marker date="1458760625573" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
-            <marker date="1458760625573" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
-            <marker date="1458760625573" expanded="true" signature="3772:4093" placeholder="..." />
+            <marker date="1458760718860" expanded="true" signature="3384:3619" placeholder="SELECT a.id,... menu" />
+            <marker date="1458760718860" expanded="true" signature="3489:3561" placeholder="SELECT paren... " />
+            <marker date="1458760718860" expanded="true" signature="3772:4097" placeholder="..." />
           </folding>
         </state>
       </provider>

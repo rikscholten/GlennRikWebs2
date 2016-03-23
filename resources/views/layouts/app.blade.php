@@ -115,11 +115,11 @@ break;
 
 
         if ($row->Count > 0) {
-            echo "<li><a href='".url('/login')."'>" . $row->label . "</a>";
+            echo "<li><a href='".url($row->link)."'>" . $row->label . "</a>";
             create_navbar($row->id, $level + 1 );
             echo "</li>";
         } elseif ($row->Count ==0) {
-            echo "<li><a href='" . $row->link . "'>" . $row->label . "</a></li>";
+            echo "<li><a href='" .url($row->link)."'>" . $row->label . "</a></li>";
         } else;
 
         }
