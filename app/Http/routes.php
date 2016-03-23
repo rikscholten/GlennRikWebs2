@@ -13,20 +13,18 @@
 use App\Product;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    if(Auth::user() == null){
+
+        return view('welcome');
+    }
+    return view('home');
 });
 
-Route::get('/store', function () {
-    $product = new Product();
-    $product->naam = "hello";
-    $product->artiest ="adelle";
-    $product->beschrijving ="dit is een numer";
-    $product->korte_beschrijving = "korte bes";
-    $product->categorie = "muziek";
-    $product->prijs = 12;
-    $data['products'] = $product;
-    return view('store',$data);
-});
+Route::get('/home', 'HomeController@index');
+
+Route::get('/store', 'ProductController@store');
+Route::get('/product/{id?}', 'ProductController@product');
 
 
 /*

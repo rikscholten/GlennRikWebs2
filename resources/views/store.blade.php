@@ -4,7 +4,7 @@
 
 
 
-<h1 class="ui centered aligned header">Gameconsole Webshop</h1>
+<h1 class="ui centered aligned header">Muziek shop</h1>
 
 <div class="ui cards">
 
@@ -24,4 +24,8 @@
 </div>
 
 
+@endsection
+
+@section('style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.1/semantic.min.css">
 @endsection
