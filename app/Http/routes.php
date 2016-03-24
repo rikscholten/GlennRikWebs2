@@ -31,10 +31,10 @@ use App\Product;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
-
+        session(['naam' => 'mijn session']);
         try {
             Auth::user()->name;
-            return view('home');
+            return view('home', ['sessionName' => session('naam')]);
         } catch (Exception $e) {
             return view('welcome');
         }
@@ -44,6 +44,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('/car', 'ProductController@car');
 
     Route::get('/home', 'HomeController@index');
     Route::get('/store', 'ProductController@store');

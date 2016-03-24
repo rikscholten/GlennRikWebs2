@@ -66,4 +66,16 @@ class ProductController extends Controller {
         return view('product', $pro);
     }
 
+    public function car(){
+
+        return view('winkel_wagen');
+    }
+
+    public function add_to_car($product){
+
+
+    }
+
+
+
 }

@@ -8,6 +8,8 @@
 session_start();
 $mijn_naam = "Sessie naam";
 
+
+
 $_SESSION['naam'] = $mijn_naam;
 
 

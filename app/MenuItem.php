@@ -3,15 +3,9 @@
 namespace App;
 
 
-class MenuItem
+class MenuItem extends Model
 {
 
-    public $id;
-    public $label;
-    public $link;
-    public $parent;
-    public $sort;
-    public $admin;
 
 
 

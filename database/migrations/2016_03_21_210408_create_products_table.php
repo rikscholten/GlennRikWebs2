@@ -15,10 +15,10 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('naam');
-            $table->string('korte_beschrijving');
+            $table->string('korte_beschrijving', 200);
             $table->string('beschrijving');
             $table->string('artiest');
-            $table->integer('categorie_id');
+            $table->string('image');
             $table->integer('prijs');
             $table->timestamps();
         });
@@ -33,5 +33,6 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::drop('products');
+
     }
 }

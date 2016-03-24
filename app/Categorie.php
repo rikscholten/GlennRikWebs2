@@ -7,12 +7,7 @@
  */
 namespace App;
 
-class Categorie{
-    public $naam;
-    public $beschrijving;
-    public $parrent_categorie;
-
-
+class Categorie extends Model{
 
 }
 
