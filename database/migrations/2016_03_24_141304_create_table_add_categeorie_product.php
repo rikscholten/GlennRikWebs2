@@ -16,7 +16,7 @@ class CreateTableAddCategeorieProduct extends Migration
         Schema::table('products', function ($table) {
             $table->integer('caterorie_id')->unsigned();
 
-            $table->foreign('caterorie_id')->references('id')->on('categorieen');
+            $table->foreign('caterorie_id')->references('id')->on('categoriees');
         });
     }
 

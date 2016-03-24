@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('beschrijving');
             $table->string('artiest');
             $table->string('image');
+            $table->integer('release_date');
             $table->integer('prijs');
             $table->timestamps();
         });

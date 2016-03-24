@@ -6,8 +6,8 @@
  * Time: 12:04
  */
 namespace App;
-
-class Categorie extends Model{
+use Illuminate\Database\Eloquent\Model;
+class Categoriee extends Model{
 
 }
 

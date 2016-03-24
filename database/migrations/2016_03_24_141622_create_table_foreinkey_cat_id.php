@@ -12,10 +12,10 @@ class CreateTableForeinkeyCatId extends Migration
      */
     public function up()
     {
-        Schema::table('categorieen', function ($table) {
-            $table->integer('parent_id')->unsigned();
+        Schema::table('categoriees', function ($table) {
+            $table->integer('parent_id')->unsigned()->nullable();
 
-            $table->foreign('parent_id')->references('id')->on('categorieen');
+            $table->foreign('parent_id')->references('id')->on('categoriees')->nullable();
         });
     }
 
