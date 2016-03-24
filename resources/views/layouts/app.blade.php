@@ -106,7 +106,6 @@ function create_navbar($parent, $level ) {
 				WHERE a.parent=" . $parent);
 
 
-
     echo "<ul class='nav navbar-nav'>";
     foreach ($result as $row) {
         if($row->admin == 1 && Auth::guest() ){

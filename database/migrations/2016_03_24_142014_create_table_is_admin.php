@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategorie extends Migration
+class CreateTableIsAdmin extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateCategorie extends Migration
      */
     public function up()
     {
-        Schema::create('categorieen', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('naam');
-            $table->string('beschrijving');
-            $table->timestamps();
-        });
 
+        Schema::table('users', function ($table) {
+            $table->boolean('isAdmin')->unsigned();
+
+        });
     }
 
     /**
@@ -28,6 +26,6 @@ class CreateCategorie extends Migration
      */
     public function down()
     {
-        Schema::drop('categorieen');
+        //
     }
 }
