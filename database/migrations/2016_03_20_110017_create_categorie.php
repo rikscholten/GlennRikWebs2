@@ -16,7 +16,7 @@ class CreateCategorie extends Migration
             $table->increments('id');
             $table->string('naam');
             $table->string('beschrijving');
-            $table->integer('parrent_categorie');
+            $table->integer('parrent_categorie')->unsigned();
             $table->timestamps();
         });
 
