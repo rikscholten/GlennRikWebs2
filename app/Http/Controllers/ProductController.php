@@ -6,6 +6,7 @@ class ProductController extends Controller {
 
     public function store()
     {
+
         //gets all the products out of the database and gives it to view
         $data['products'] = Product::get();;
         return view('store', $data);
@@ -20,15 +21,6 @@ class ProductController extends Controller {
         return view('product', $data);
     }
 
-    public function car(){
-
-        return view('winkel_wagen');
-    }
-
-    public function add_to_car($product){
-
-
-    }
 
 
 
