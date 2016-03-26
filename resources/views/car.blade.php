@@ -17,6 +17,16 @@
                     <div class="extra content">
                         €{{ $product->prijs }}
                     </div>
+
+
+                    <br>
+                    <div class="extra content">
+                        <form action="car/dell" method="get">
+                            <input type="hidden"  name = 'id' value={{$product->id}} >
+                            <input class="btn btn-danger" type="submit" value="Deltele from car">
+                        </form>
+
+                    </div>
                 </div>
             </div>
         @endforeach

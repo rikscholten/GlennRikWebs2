@@ -1,5 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\Product;
+use Illuminate\Http\Request;
+
 /**
  * Created by PhpStorm.
  * User: Glenn
@@ -20,12 +23,31 @@ class CarController extends Controller
 
         return view('car');
     }
-
-    public function add_to_car($product)
+    public function add(Request $request)
     {
-       // array_add(session('car', $product));
+
+        $int = $request->input('id');
+        $id = (int)$int;
+
+        session('car')->append(Product::find($id));
+        return view('car');
 
     }
+
+    public function dell(Request $request)
+    {
+
+        $int = $request->input('id');
+        $id = (int)$int;
+        $counter = 0;
+        echo $id;
+        unset(session('car')[$id]);
+
+        return view('car');
+
+
+    }
+
 
 }
 ?>
