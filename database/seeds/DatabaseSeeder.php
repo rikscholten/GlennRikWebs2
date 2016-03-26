@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Database\Eloquent\Model;
 use App\MenuItem;
 
 
@@ -45,6 +46,16 @@ class UserTableSeeder extends Seeder {
 
         $menu_item =(array('label' => 'subitem', 'link'=> '/admin/sub' , 'parent' => 5, 'sort' => 0, 'admin' => 1 ));
         DB::table('menu')->insert($menu_item);
+
+
+
+
+
+        $cat = factory(App\Categoriee::class,5)->create();
+        $pro = factory(App\Product::class,10)->create();
+
+
+
 
 
     }

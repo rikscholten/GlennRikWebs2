@@ -7,11 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateCategorie' => $baseDir . '/database/migrations/2016_03_20_110017_create_categorie.php',
-    'CreateCategorieProduct' => $baseDir . '/database/migrations/2016_03_24_121908_create_categorie_product.php',
     'CreateMenuItems' => $baseDir . '/database/migrations/2016_03_22_121307_create_menu_items.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateProductsTable' => $baseDir . '/database/migrations/2016_03_21_210408_create_products_table.php',
-    'CreateTableForeinkeyCategorieen' => $baseDir . '/database/migrations/2016_03_24_124143_create_table_foreinkey_categorieen.php',
+    'CreateTableAddCategeorieProduct' => $baseDir . '/database/migrations/2016_03_24_141304_create_table_add_categeorie_product.php',
+    'CreateTableForeinkeyCatId' => $baseDir . '/database/migrations/2016_03_24_141622_create_table_foreinkey_cat_id.php',
+    'CreateTableIsAdmin' => $baseDir . '/database/migrations/2016_03_24_142014_create_table_is_admin.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

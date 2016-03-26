@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategorieProduct extends Migration
+class CreateTableAddCategeorieProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCategorieProduct extends Migration
     public function up()
     {
 
-
         Schema::table('products', function ($table) {
-            $table->integer('categorie_id')->unsigned();
-            $table->foreign('categorie_id')->references('id')->on('categorieen');
+            $table->integer('caterorie_id')->unsigned();
+
+            $table->foreign('caterorie_id')->references('id')->on('categoriees');
         });
     }
 
@@ -27,7 +27,6 @@ class CreateCategorieProduct extends Migration
      */
     public function down()
     {
-        Schema::table('categorie_id');
-
+        //
     }
 }
