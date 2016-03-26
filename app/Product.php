@@ -11,7 +11,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
 
-
+    public $timestamps = false;
+    protected $fillable = [
+        'naam',
+        'korte_beschrijving',
+        'beschrijving',
+        'artiest',
+        'prijs',
+        'created_at',
+        'updated_at',
+    ];
 
 }
 
