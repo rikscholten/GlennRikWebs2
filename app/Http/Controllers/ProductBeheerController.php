@@ -4,13 +4,14 @@ use App\Http\Requests;
 
 use Request;
 use \DateTime;
+use App\Product;
 
 class ProductBeheerController extends Controller {
 
 
 
     public function indexcrud(){
-        $producten = Products::where('id', '>', '0')->get();
+        $producten = Product::where('id', '>', '0')->get();
 
         return view('productenbeheer.productbeheer', ['producten' => $producten]);
     }

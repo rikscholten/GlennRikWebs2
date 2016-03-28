@@ -56,7 +56,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/store', 'ProductController@store');
     Route::get('/product/{id?}', 'ProductController@product');
-    Route::get('/cms', 'ProductenBeheerController@indexcrud');
+    Route::get('/cms', 'ProductBeheerController@indexcrud');
 });
 
 
