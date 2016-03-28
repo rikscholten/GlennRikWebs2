@@ -110,12 +110,20 @@ function create_navbar($parent, $level ) {
 
     echo "<ul class='nav navbar-nav'>";
     foreach ($result as $row) {
-        if($row->admin == 1 && Auth::guest() ){
+        if( Auth::guest()  ){
 break;
         }
 
+if( $row->admin){
 
-        if ($row->Count > 0) {
+    if(Auth::user()->isAdmin != $row->admin){
+break;
+    }
+}
+
+
+
+        if ($row->Count > 0  ) {
             echo "<li><a href='".url($row->link)."'>" . $row->label . "</a>";
             create_navbar($row->id, $level + 1 );
             echo "</li>";
