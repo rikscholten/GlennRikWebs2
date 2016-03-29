@@ -2,7 +2,8 @@
 
 use App\Product;
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
     public function store()
     {
@@ -20,8 +21,6 @@ class ProductController extends Controller {
 
         return view('product', $data);
     }
-
-
 
 
 }

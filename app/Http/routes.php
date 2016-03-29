@@ -38,7 +38,9 @@ Route::group(['middleware' => ['web']], function () {
             Auth::user()->name;
             return view('home', ['sessionName' => session('naam')]);
         } catch (Exception $e) {
-            return view('welcome');
+            $products = Product::where('id', '=', '2')->get();
+
+            return view('welcome', ['products' => $products]);
         }
     });
 
@@ -56,8 +58,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/store', 'ProductController@store');
     Route::get('/product/{id?}', 'ProductController@product');
-    Route::get('/cms', 'ProductenBeheerController@indexcrud');
+
+    Route::get('/cms', 'CMS@indexcrud');
+    Route::get('/cms/productbeheer/create', 'CMS@create');
+    Route::get('/cms/productbeheer/delete', 'CMS@delete');
+    Route::get('/cms/productbeheer/edit', 'CMS@edit');
+    Route::get('/cms/productbeheer/createProduct', 'CMS@createProduct');
+
 });
+
 
 
 

@@ -22,6 +22,7 @@ class Product extends Model {
         'updated_at',
     ];
 
+    protected $table = 'products';
 }
 
 
