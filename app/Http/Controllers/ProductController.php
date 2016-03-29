@@ -5,7 +5,8 @@ use App\Categoriee;
 use App\Product;
 use Illuminate\Support\Facades\Input;
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
     public function __construct()
     {
@@ -57,8 +58,6 @@ class ProductController extends Controller {
 
         return view('product', $data);
     }
-
-
 
 
 }
