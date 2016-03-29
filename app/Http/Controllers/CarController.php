@@ -42,7 +42,7 @@ class CarController extends Controller
         $id = (int)$int;
         $counter = 0;
         echo $id;
-        unset(session('car')[$id]);
+
 
         return view('car');
 

@@ -22,7 +22,9 @@ class Product extends Model {
         'updated_at',
     ];
 
-    protected $table = 'products';
+    public function __toString() {
+        return $this->id;
+    }
 }
 
 
