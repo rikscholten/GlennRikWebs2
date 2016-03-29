@@ -59,11 +59,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/store', 'ProductController@store');
     Route::get('/product/{id?}', 'ProductController@product');
 
-    Route::get('/cms', 'CMS@indexcrud');
-    Route::get('/cms/productbeheer/create', 'CMS@create');
-    Route::get('/cms/productbeheer/delete', 'CMS@delete');
-    Route::get('/cms/productbeheer/edit', 'CMS@edit');
-    Route::get('/cms/productbeheer/createProduct', 'CMS@createProduct');
+    Route::get('/cms', 'CMSController@indexBeheer');
+    Route::get('/cms/productbeheer/create', 'CMSController@create');
+    Route::get('/cms/productbeheer/delete', 'CMSController@delete');
+    Route::get('/cms/productbeheer/edit', 'CMSController@edit');
+    Route::get('/cms/productbeheer/createProduct', 'CMSController@createProduct');
 
 });
 

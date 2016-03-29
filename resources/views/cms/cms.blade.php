@@ -34,15 +34,15 @@
                                             <td>{{$products->korte_beschrijving}}</td>
                                             <td>{{$products->artiest}}</td>
                                             <td>{{$products->prijs}}</td>
-                                            <td><a href='/cms/productbeheer/edit/{{$products ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
-                                            <td><a href='/cms/productbeheer/delete/{{$products ->id}}'><button class="btn-danger btn btn-sm">Verwijderen</button></a></td></td>
+                                            <td><a href='/GlennRikWebs2/public/cms/productbeheer/edit/{{$products ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
+                                            <td><a href='/GlennRikWebs2/public/cms/productbeheer/delete/{{$products ->id}}'><button class="btn-danger btn btn-sm">Verwijderen</button></a></td></td>
                                         </tr>
 
                                     @endforeach
 
                                     </tbody>
                                 </table>
-                                <a href='/cms/productbeheer/create'><button class="btn btn-primary" >Product Aanmaken</button></a>
+                                <a href='/GlennRikWebs2/public/cms/productbeheer/create'><button class="btn btn-primary" >Product Aanmaken</button></a>
                             </div>
 
                             <div id="tab2" class="tab-pane fade in active">

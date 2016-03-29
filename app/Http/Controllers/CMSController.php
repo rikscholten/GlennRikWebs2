@@ -2,17 +2,17 @@
 
 use App\Product;
 
-class ProductController extends Controller
+class CMSController extends Controller
 {
 
     public function indexBeheer(){
         $data['products'] = Product::get();;
-        return view('store', $data);
+        return view('cms.cms', $data);
     }
 
     public function create()
     {
-        return view('productCreate');
+        return view('cms.productCreate');
     }
 
     public function createProduct()
@@ -42,7 +42,7 @@ class ProductController extends Controller
             return back();
         }
 
-        return redirect()->action('ProductBeheerController@indexbeheer');
+        return redirect()->action('CMSController@indexbeheer');
     }
 
     public function deleteProduct($id)

@@ -7,6 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Product toevoegen</div>
                     <div class="panel-body">
+
                         {!! Form::open(['url' => '/productbeheer/createProduct']) !!}
                         {!! Form::label('product_naam', 'Product naam') !!}
                         {!! Form::text('product_naam', null, ['class' => 'form-control']) !!}
