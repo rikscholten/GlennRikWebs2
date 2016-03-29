@@ -27,7 +27,7 @@
 
     <div class="ui cards">
 
-        @foreach (session('car') as $product)
+        @foreach (session('car') as $product_out)
             <?php $prijs = $prijs + $product->prijs ?>
             <div class="card">
                 <div class="content">

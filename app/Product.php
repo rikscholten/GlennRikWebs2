@@ -22,6 +22,9 @@ class Product extends Model {
         'updated_at',
     ];
 
+    public function __toString() {
+        return $this->id;
+    }
 }
 
 

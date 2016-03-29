@@ -43,8 +43,7 @@ class CarController extends Controller
         $counter = 0;
         echo $id;
 
-       $car=  session('car');
-        Session::forget('car');
+
         return view('car');
 
 
