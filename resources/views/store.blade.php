@@ -13,10 +13,27 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
 
 <h1 class="ui centered aligned header">Muziek shop</h1>
 <div>
-    <div class="ui cards">
-        <div class="card">
-    <form action="{{\Illuminate\Support\Facades\URL::current()}}">
 
+    <?php
+    $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+    $counter = 0;
+    echo "<a href='http://localhost/GlennRikWebs2/public/home'>home</a>";
+    echo "/";
+    echo "<a href='http://localhost/GlennRikWebs2/public/car'>car</a>";
+    echo "/";
+    foreach($crumbs as $crumb){
+        if($counter > 2){
+            echo ucfirst(str_replace(array(".php","_"),array(""," "),"<a href='http://localhost/GlennRikWebs2/public/$crumb'>" . $crumb) ."</a>" .'/');
+
+        }
+
+        $counter ++;
+    }
+    ?>
+
+    <form action="{{\Illuminate\Support\Facades\URL::current()}}">
+        <div class="ui cards">
+            <div class="card">
         <label for="">Price</label>
 
         <br>
@@ -28,7 +45,7 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
 
 
         <div class="card">
-            <div id="" style="overflow-y:scroll; overflow-x:hidden; height:100px;">
+            <div id="" style="overflow-y:scroll; overflow-x:hidden; height:200px;">
         <?php $brands = \Illuminate\Support\Facades\Input::has('brands') ? \Illuminate\Support\Facades\Input::get('brands'): [];
         $counter = 0;
         ?>
@@ -39,11 +56,13 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
     {{ Categoriee::where('id',$cat->caterorie_id)->get()->first()->naam }}
             <br>
 
+
     @endforeach
 </div>
 
-            <div class="card">
-                <div id="" style="overflow-y:scroll; overflow-x:hidden; height:100px;">
+        </div>
+            <div class="card" >
+                <div id="" style="overflow-y:scroll; overflow-x:hidden; height:200px;">
                     <?php $artiests = \Illuminate\Support\Facades\Input::has('artiests') ? \Illuminate\Support\Facades\Input::get('artiests'): [];
                     $counter = 0;
                     ?>
@@ -54,17 +73,21 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
                         {{ $cat->artiest }}
                         <br>
                     @endforeach
-                </div>
-                </div>
+</div>
+
+        </div>
+
 
     <div class="card">
 <br>
         <button >Go</button>
 </div>
+
+        </div>
     </form>
 
 
-</div>
+
 
 
 <div class="ui cards">
@@ -76,6 +99,7 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
 
                 <div class="extra content">
                     €{{ $product->prijs }}
+                    <img src="{{ URL::to('images/'.$product->image) }}" height="100" />
                 </div>
 <br>
                 <div class="extra content">

@@ -6,9 +6,10 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
-                {{$sessionName}}
+
                 <div class="panel-body">
-                    You are logged in!
+                   Welcome terug {{\Illuminate\Support\Facades\Auth::user()->name}}! <br>
+                    
                 </div>
             </div>
         </div>
