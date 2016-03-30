@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class HomeController extends Controller
+class BlogController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,21 +16,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        session(['car' => new \ArrayObject()]);
     }
 
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $this->middleware('auth');
 
-        return view('home', ['sessionName' => session('naam')]);
-    }
     public function blog()
     {
         $data['blogs']= Blog::get();
@@ -44,7 +33,7 @@ class HomeController extends Controller
         $blog->onderwerp = $request->input('onderwerp');
         $blog->text = $request->input('text');
         $blog->aantal_uur = $request->input('uren');
-$blog->save();
+        $blog->save();
 
         $data['blogs']= Blog::get();
         return view('blog', $data);

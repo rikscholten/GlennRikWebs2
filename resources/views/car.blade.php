@@ -27,29 +27,42 @@
 
     <div class="ui cards">
 
-        @foreach (session('car') as $product)
-            <?php $prijs = $prijs + ($product->prijs * $product->aantal) ?>
-            <div class="card">
-                <div class="content">
-                    <a class="header" href="http://localhost/GlennRikWebs2/public/product/{{ $product->id }}">{{ $product->naam }}</a>
-
-                    <div class="extra content">
-                        {{ $product->aantal }}<br>
-                        €{{ $product->prijs }}
-                    </div>
 
 
-                    <br>
-                    <div class="extra content">
-                        <form action="http://localhost/GlennRikWebs2/public/car/dell" method="get">
-                            <input type="hidden"  name ='id' value={{$product->id}} >
-                            <input class="btn btn-danger" type="submit" value="Delete from car">
-                        </form>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>Artiest</th>
+                    <th>Beschrijving</th>
+                    <th>Prijs</th>
+                    <th>aantal</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(session('car') as $products)
+                <?php $prijs = $prijs + ($products->prijs * $products->aantal) ?>
+                <tr>
+                    <td>{{$products->naam}}</td>
+                    <td>{{$products->artiest}}</td>
+                    <td>{{$products->korte_beschrijving}}</td>
+                    <td>{{$products->prijs }}</td>
+                    <td>{{$products->aantal}}</td>
+                  <td>  <form action="http://localhost/GlennRikWebs2/public/car/dell" method="get">
+                        <input type="hidden"  name ='id' value={{$products->id}} >
+                        <input class="btn btn-danger" type="submit" value="-">
+                    </form></td>
+                   <td> <form action="http://localhost/GlennRikWebs2/public/car/add" method="get">
+                        <input type="hidden"  name ='id' value={{$products->id}} >
+                        <input class="btn btn-success" type="submit" value="+">
+                    </form></td>
 
-                    </div>
-                </div>
-            </div>
-        @endforeach
+                </tr>
+
+                @endforeach
+
+                </tbody>
+            </table>
 <br>
     </div>
     <div>
