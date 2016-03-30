@@ -20,6 +20,7 @@ class Product extends Model {
         'prijs',
         'created_at',
         'updated_at',
+        'aantal'=>0,
     ];
 
     public function __toString() {

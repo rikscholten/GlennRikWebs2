@@ -27,13 +27,14 @@
 
     <div class="ui cards">
 
-        @foreach (session('car') as $product_out)
-            <?php $prijs = $prijs + $product->prijs ?>
+        @foreach (session('car') as $product)
+            <?php $prijs = $prijs + ($product->prijs * $product->aantal) ?>
             <div class="card">
                 <div class="content">
                     <a class="header" href="http://localhost/GlennRikWebs2/public/product/{{ $product->id }}">{{ $product->naam }}</a>
 
                     <div class="extra content">
+                        {{ $product->aantal }}<br>
                         €{{ $product->prijs }}
                     </div>
 
