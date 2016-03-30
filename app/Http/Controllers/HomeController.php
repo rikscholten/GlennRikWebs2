@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -15,7 +16,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
         session(['car' => new \ArrayObject()]);
     }
 
@@ -27,6 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $this->middleware('auth');
+
         return view('home', ['sessionName' => session('naam')]);
+    }
+    public function blog()
+    {
+        $data['blogs']= Blog::get();
+        return view('blog', $data);
     }
 }

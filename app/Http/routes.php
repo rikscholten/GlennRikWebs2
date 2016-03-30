@@ -50,6 +50,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
     session(['car'=> new \ArrayObject() ]) ;
 
+    Route::get('/blog', 'HomeController@blog');
+    Route::get('/blog/add', 'HomeController@create_blog');
+
+
     Route::get('/car', 'CarController@car');
     Route::get('/car/add', 'CarController@add');
     Route::get('/car/dell', 'CarController@dell');
