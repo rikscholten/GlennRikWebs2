@@ -48,7 +48,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
+    session(['car'=> new \ArrayObject() ]) ;
 
     Route::get('/car', 'CarController@car');
     Route::get('/car/add', 'CarController@add');

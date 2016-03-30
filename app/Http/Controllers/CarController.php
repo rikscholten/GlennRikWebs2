@@ -15,6 +15,7 @@ class CarController extends Controller
 {
     public function __construct()
     {
+
         $this->middleware('auth');
     }
 
@@ -30,22 +31,47 @@ class CarController extends Controller
         $int = $request->input('id');
         $id = (int)$int;
 
-        session('car')->append(Product::find($id));
+        foreach(session('car') as $product){
+            if($product->id == $id){
+                $product->aantal++;
+                return view('car');
+            }
+
+        }
+$add = Product::find($id);
+        $add->aantal++;
+        session('car')->append($add);
         return view('car');
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function dell(Request $request)
     {
 
         $int = $request->input('id');
         $id = (int)$int;
-        $counter = 0;
         echo $id;
 
+$counter = 0;
+
+        foreach(session('car') as $product){
+        if($product->id === $id && $product->aantal ==1){
+            unset(session('car')[$counter]);
+            break;
+        }
+            if($product->id === $id && $product->aantal > 1){
+                $product->aantal--;
+                break;
+            }
+$counter++;
+
+        }
 
         return view('car');
-
 
     }
 
