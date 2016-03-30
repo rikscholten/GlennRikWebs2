@@ -41,10 +41,10 @@ class UserTableSeeder extends Seeder {
         $menu_item =(array('label' => 'Store', 'link'=> '/store' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
         DB::table('menu')->insert($menu_item);
 
-        $menu_item =(array('label' => 'Admin', 'link'=> '/admin' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
+        $menu_item =(array('label' => 'Blog', 'link'=> '/blog' , 'parent' => 0, 'sort' => 0, 'admin' => 0 ));
         DB::table('menu')->insert($menu_item);
 
-        $menu_item =(array('label' => 'subitem', 'link'=> '/admin/sub' , 'parent' => 5, 'sort' => 0, 'admin' => 1 ));
+        $menu_item =(array('label' => 'Admin', 'link'=> '/cms' , 'parent' => 0, 'sort' => 0, 'admin' => 1 ));
         DB::table('menu')->insert($menu_item);
 
 

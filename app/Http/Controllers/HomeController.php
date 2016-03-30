@@ -36,4 +36,20 @@ class HomeController extends Controller
         $data['blogs']= Blog::get();
         return view('blog', $data);
     }
+
+    public function create_blog(Request $request)
+    {
+        $blog = new Blog();
+        $blog->naam = $request->input('naam');
+        $blog->onderwerp = $request->input('onderwerp');
+        $blog->text = $request->input('text');
+        $blog->aantal_uur = $request->input('uren');
+$blog->save();
+
+        $data['blogs']= Blog::get();
+        return view('blog', $data);
+
+    }
+
+
 }

@@ -5,18 +5,33 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Welcome</div>
+                    <div class="panel-heading">Maak nieuwe blog</div>
 
                     <div class="panel-body">
-                        Welcome. Dit is een site voor leden exclusief dus om naar de winkel te kunnen gaan<br>
-                        moet u eerst inloggen.
+                        <form action="http://localhost/GlennRikWebs2/public/blog/add" method="get" id ="h">
+                            naam:      <input type="text" name="naam"><br>
+                            <textarea form="h" name="text" >tekst</textarea><br>
+                            onderwerp: <input type="text" name="onderwerp"><br>
+                            uren:      <input type="text" name="uren"><br>
+                            <input type="submit" value="Submit">
+                        </form>
                     </div>
 
-                    <div class="panel-heading">Info</div>
+                    <div class="panel-heading">posts</div>
 
                     <div class="panel-body">
-                        Het idee van deze winkel is om een soort indi muziek winkel te maken. Op deze site staan <br>
-                        geen bekende nummers maar juist van onbekende artiesten.
+                       @foreach($blogs as $blog)
+                         <b>  schrijver :</b> {{$blog->naam}}<br><br>
+                             <b>   onderwerp :</b> {{$blog->onderwerp}}<br>
+                                 <b>   text : </b>{{$blog->text}}<br><br>
+                                     <b>  aantal uren :</b> {{$blog->aantal_uur}}<br>
+                                         <b>  gepost op  :</b> {{$blog->created_at}}<br>
+<hr>
+
+
+
+
+                        @endforeach
                     </div>
 
                 </div>
