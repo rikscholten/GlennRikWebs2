@@ -48,10 +48,9 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    session(['car'=> new \ArrayObject() ]) ;
 
-    Route::get('/blog', 'HomeController@blog');
-    Route::get('/blog/add', 'HomeController@create_blog');
+    Route::get('/blog', 'BlogController@blog');
+    Route::get('/blog/add', 'BlogController@create_blog');
 
 
     Route::get('/car', 'CarController@car');
