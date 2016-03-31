@@ -39,9 +39,11 @@
     Stad:  {{$stad}}<br>
     Woonplaats:  {{$woonplaats}}<br>
 
-
+<?php session(['car' => array()]) ;?>
 
 </div>
-
+<form action="http://localhost/GlennRikWebs2/public/" method="get">
+    <input class="btn btn-success" type="submit" value=" Terug naar home">
+</form>
 </div>
     @endsection

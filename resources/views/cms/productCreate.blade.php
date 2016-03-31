@@ -17,13 +17,15 @@
                             Prijs:<br>
                             <input type="text" name="product_prijs"><br>
                             Artiest:<br>
-                            <input type="text" name="product_artiest"><br>
+                            <input type="text" name="product_artiestnaam"><br>
                             Image:<br>
                             <input type="text" name="product_image"><br>
+                            Release Date:<br>
+                            <input type="text" name="product_release_date"><br>
                             Categorie:<br>
-                            <select name="categorieen">
+                            <select name="product_categorie_id">
                                 @foreach($categorieen as $categorieen)
-                                    <option name="categorie_parent_id" value="{{$categorieen->id}}">{{$categorieen->naam}}</option>
+                                    <option value="{{$categorieen->id}}">{{$categorieen->naam}}</option>
                                 @endforeach
                             </select>
 

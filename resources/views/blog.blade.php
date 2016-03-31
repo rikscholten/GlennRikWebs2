@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         <form action="http://localhost/GlennRikWebs2/public/blog/add" method="get" id ="h">
                             Naam:  <br>    <input type="text" name="naam"><br>
-                           Tekst: <br><textarea form="h" name="text" >tekst</textarea><br>
+                           Tekst: <br><textarea form="h" name="text" ></textarea><br>
                             Onderwerp:<br> <input type="text" name="onderwerp"><br>
                             Uren: <br>     <input type="text" name="uren"><br>
                             <input type="submit" value="Submit">

@@ -34,7 +34,7 @@
                                             <td>{{$products->korte_beschrijving}}</td>
                                             <td>{{$products->artiest}}</td>
                                             <td>{{$products->prijs}}</td>
-                                            <td><a href='/GlennRikWebs2/public/cms/productbeheer/edit/{{$products ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
+                                            <td><a href='/GlennRikWebs2/public/cms/productbeheer/editProductWindow/{{$products ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
                                             <td><a href='/GlennRikWebs2/public/cms/productbeheer/delete/{{$products ->id}}'><button class="btn-danger btn btn-sm">Verwijderen</button></a></td></td>
                                         </tr>
 
@@ -59,7 +59,7 @@
                                         <tr>
                                             <td>{{$categorieen->naam}}</td>
                                             <td>{{$categorieen->beschrijving}}</td>
-                                            <td><a href='/GlennRikWebs2/public/cms/categoriebeheer/edit/{{$categorieen ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
+                                            <td><a href='/GlennRikWebs2/public/cms/categoriebeheer/editCategorieWindow/{{$categorieen->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
                                             <td><a href='/GlennRikWebs2/public/cms/categoriebeheer/delete/{{$categorieen ->id}}'><button class="btn-danger btn btn-sm">Verwijderen</button></a></td></td>
                                         </tr>
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlogTableV2 extends Migration
+class CreateBlogTable extends Migration
 {
     /**
      * Run the migrations.

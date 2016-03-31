@@ -2,6 +2,8 @@
 
 use App\Product;
 use App\Categoriee;
+use Request;
+use \DateTime;
 
 class CMSController extends Controller
 {
@@ -25,7 +27,7 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        if (!empty($input['product_name'])) {
+        if (!empty($input['product_naam'])) {
             $product = new Product();
 
             $product->naam = $input['product_naam'];
@@ -34,7 +36,8 @@ class CMSController extends Controller
             $product->artiest = $input['product_artiestnaam'];
             $product->prijs = $input['product_prijs'];
             $product->image = $input['product_image'];
-            $product->categorie_id = $input['product_categorie_id'];
+            $product->caterorie_id = $input['product_categorie_id'];
+            $product->release_date = $input['product_release_date'];
 
             $dt = new DateTime();
             $dt->format('Y-m-d');
@@ -47,13 +50,14 @@ class CMSController extends Controller
             return back();
         }
 
-        return redirect()->action('CMSController@indexbeheer');
+        return redirect()->action('CMSController@indexBeheer');
     }
 
-    public function editProductWindow()
+    public function editProductWindow($id)
     {
+        $product['product'] = Product::findorfail($id);
         $categorieen['categorieen'] = Categoriee::get();
-        return view('cms.productEdit', $categorieen);
+        return view('cms.productEdit', $categorieen, $product);
     }
 
     public function editProduct($id)
@@ -68,7 +72,7 @@ class CMSController extends Controller
         $product->artiest = $input['product_artiestnaam'];
         $product->prijs = $input['product_prijs'];
         $product->image = $input['product_image'];
-        $product->categorie_id = $input['product_categorie_id'];
+        $product->caterorie_id = $input['product_categorie_id'];
 
         $dt = new DateTime();
         $dt->format('Y-m-d');
@@ -77,7 +81,7 @@ class CMSController extends Controller
 
         $product->save();
 
-        return back();
+        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function deleteProduct($id)
@@ -86,12 +90,12 @@ class CMSController extends Controller
 
         $product->delete();
 
-        return redirect()->action('CMSController@indexbeheer');
+        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function createCategorieWindow()
     {
-        $categorieenP['categorieen'] = Categoriee::where('parrent_categorie', '=', 'null');
+        $categorieenP['categorieen'] = Categoriee::get();
         return view('cms.categorieCreate', $categorieenP);
     }
 
@@ -102,12 +106,12 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        if (!empty($input['categorie_name'])) {
+        if (!empty($input['categorie_naam'])) {
             $categorie = new Categoriee();
 
-            $categorie->naam = $input['categorie_name'];
-            $categorie->beschrijving = $input['categorie_name'];
-            $categorie->parent_categorie = $input['categorie_parent_id'];
+            $categorie->naam = $input['categorie_naam'];
+            $categorie->beschrijving = $input['categorie_beschrijving'];
+            $categorie->parent_id = $input['categorie_parent_id'];
 
             $dt = new DateTime();
             $dt->format('Y-m-d');
@@ -120,13 +124,14 @@ class CMSController extends Controller
             return back();
         }
 
-        return redirect()->action('CMSController@indexbeheer');
+        return redirect()->action('CMSController@indexBeheer');
     }
 
-    public function editCategorieWindow()
+    public function editCategorieWindow($id)
     {
-        $categorieenP['categorieen'] = Categoriee::where('parrent_categorie', '=', 'null');
-        return view('cms.categorieEdit', $categorieenP);
+        $categorie['categorie'] = Categoriee::findorfail($id);
+        $categorieenP['categorieenP'] = Categoriee::get();
+        return view('cms.categorieEdit', $categorie, $categorieenP);
     }
 
     public function editCategorie($id)
@@ -137,7 +142,7 @@ class CMSController extends Controller
 
         $categorie->naam = $input['categorie_naam'];
         $categorie->beschrijving = $input['categorie_beschrijving'];
-        $categorie->parent_categorie = $input['categorie_parent_id'];
+        $categorie->parent_id = $input['categorie_parent_id'];
 
         $dt = new DateTime();
         $dt->format('Y-m-d');
@@ -155,7 +160,7 @@ class CMSController extends Controller
 
         $categorie->delete();
 
-        return redirect()->action('CMSController@indexbeheer');
+        return redirect()->action('CMSController@indexBeheer');
     }
 
 }
