@@ -51,9 +51,7 @@
                                     <thead>
                                     <tr>
                                         <th>Naam</th>
-                                        <th>Korte beschrijving</th>
                                         <th>Beschrijving</th>
-                                        <th>Prijs</th>
                                     </tr>
                                     </thead>
                                     <tbody>
