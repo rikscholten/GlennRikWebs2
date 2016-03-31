@@ -7,12 +7,17 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Categorie toevoegen</div>
                     <div class="panel-body">
-                        <form>
+                        <form action="http://localhost/GlennRikWebs2/public/cms/categoriebeheer/createCategorie" method="get">
                             Product naam:<br>
                             <input type="text" name="categorie_naam"><br>
                             Beschrijving:<br>
                             <input type="text" name="categorie_beschrijving"><br>
-
+                            Parent categorie:<br>
+                            <select name="categorieen">
+                                @foreach($categorieenP as $categorieenP)
+                                    <option name="categorie_parent_id" value="{{$categorieenP->id}}">{{$categorieenP->naam}}</option>
+                                @endforeach
+                            </select>
 
                             <input type="submit" class="btn btn-primary" value="Aanmaken">
                         </form>
