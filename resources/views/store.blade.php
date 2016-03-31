@@ -12,6 +12,7 @@
 
 
     <h1 class="ui centered aligned header">Muziek shop</h1>
+    <a href='/GlennRikWebs2/public/about'><button class="btn btn-primary" >About page</button></a>
     <div>
 
         <?php
