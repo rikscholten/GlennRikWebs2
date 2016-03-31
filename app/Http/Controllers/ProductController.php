@@ -20,9 +20,16 @@ class ProductController extends Controller
             $artiests = Input::has('artiests') ? Input::get('artiests') : [];
             $max_price = Input::has('max_price') ? Input::get('max_price') : null;
             $min_price = Input::has('min_price') ? Input::get('min_price') : null;
+            $naam = Input::has('naam') ? Input::get('naam') : null;
 
 
-            if(isset($min_price) && isset($max_price)){
+            if(isset($naam)){
+                $query->where('naam','LIKE','%'.$naam.'%');
+
+            }
+            /// if prijs gezet is
+            elseif(isset($min_price) && isset($max_price)){
+                // if prijs en categorie gezet is
                 if(isset($brands)){
                     foreach ($brands as $brand) {
                         $query->orWhere('prijs','>=',$min_price);
@@ -31,7 +38,7 @@ class ProductController extends Controller
 
                     }
                 }
-
+                //if prijs en artties gezet is
                 if(isset($artiests)){
                     foreach ($artiests as $artiest) {
                         $query->orWhere('prijs','>=',$min_price);
@@ -42,6 +49,10 @@ class ProductController extends Controller
                 $query-> where('prijs','>=',$min_price);
                 $query-> where('prijs','<=',$max_price);
             }
+
+
+
+
 
         })->get()];
 

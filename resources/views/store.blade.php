@@ -41,6 +41,7 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
 
         <br>
         max: <input type="text" name="max_price" value="{{\Illuminate\Support\Facades\Input::get('max_price')}}">
+
 </div>
 
 
@@ -79,6 +80,8 @@ $products_ar = \App\Product::select('artiest')->distinct('artiest')->get();?>
 
 
     <div class="card">
+        <br>
+        zoek op naam: <input type="text" name="naam" value="{{\Illuminate\Support\Facades\Input::get('naam')}}">
 <br>
         <button >Go</button>
 </div>
