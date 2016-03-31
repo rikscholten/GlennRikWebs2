@@ -15,7 +15,6 @@ class CarController extends Controller
 {
     public function __construct()
     {
-
         $this->middleware('auth');
     }
 
@@ -41,6 +40,8 @@ class CarController extends Controller
         $data['postcode'] =$request->input('postcode');
         $data['stad'] =$request->input('stad');
         $data['woonplaats'] =$request->input('woonplaats');
+        $data['prijs'] =session('prijs');
+
         $data['products'] = session('car');
 
 

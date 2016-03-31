@@ -60,6 +60,7 @@
                 </tr>
 
                 @endforeach
+                <?php session(['prijs' => $prijs]);?>
 
                 </tbody>
             </table>

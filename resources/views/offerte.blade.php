@@ -39,7 +39,9 @@
     Stad:  {{$stad}}<br>
     Woonplaats:  {{$woonplaats}}<br>
 
-<?php session(['car' => array()]) ;?>
+    <b>Totaal prijs = {{$prijs}}</b>
+
+<?php session(['car' => new \ArrayObject()]) ;?>
 
 </div>
 <form action="http://localhost/GlennRikWebs2/public/" method="get">
