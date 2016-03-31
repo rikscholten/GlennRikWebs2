@@ -27,7 +27,7 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        if (!empty($input['product_naam'])) {
+        if (!empty($input['product_naam']) && !empty($input['product_kortebeschrijving']) && !empty($input['product_artiestnaam']) && !empty($input['product_prijs']) &&!empty($input['product_release_date'])) {
             $product = new Product();
 
             $product->naam = $input['product_naam'];
@@ -47,7 +47,9 @@ class CMSController extends Controller
 
             $product->save();
         } else {
-            return back();
+            echo '<script language="javascript">';
+            echo 'alert("Niet alle velden zijn ingevuld!")';
+            echo '</script>';
         }
 
         return redirect()->action('CMSController@indexBeheer');
@@ -66,20 +68,28 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        $product->naam = $input['product_naam'];
-        $product->korte_beschrijving = $input['product_kortebeschrijving'];
-        $product->beschrijving = $input['product_beschrijving'];
-        $product->artiest = $input['product_artiestnaam'];
-        $product->prijs = $input['product_prijs'];
-        $product->image = $input['product_image'];
-        $product->caterorie_id = $input['product_categorie_id'];
+        if (!empty($input['product_naam']) && !empty($input['product_kortebeschrijving']) && !empty($input['product_artiestnaam']) && !empty($input['product_prijs']) &&!empty($input['product_release_date'])) {
 
-        $dt = new DateTime();
-        $dt->format('Y-m-d');
+            $product->naam = $input['product_naam'];
+            $product->korte_beschrijving = $input['product_kortebeschrijving'];
+            $product->beschrijving = $input['product_beschrijving'];
+            $product->artiest = $input['product_artiestnaam'];
+            $product->prijs = $input['product_prijs'];
+            $product->image = $input['product_image'];
+            $product->caterorie_id = $input['product_categorie_id'];
 
-        $product->updated_at = $dt;
+            $dt = new DateTime();
+            $dt->format('Y-m-d');
 
-        $product->save();
+            $product->updated_at = $dt;
+
+            $product->save();
+        }
+        else {
+            echo '<script language="javascript">';
+            echo 'alert("Niet alle velden zijn ingevuld!")';
+            echo '</script>';
+        }
 
         return redirect()->action('CMSController@indexBeheer');
     }
@@ -106,7 +116,7 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        if (!empty($input['categorie_naam'])) {
+        if (!empty($input['categorie_naam']) && !empty($input['categorie_beschrijving'])) {
             $categorie = new Categoriee();
 
             $categorie->naam = $input['categorie_naam'];
@@ -120,8 +130,11 @@ class CMSController extends Controller
             $categorie->updated_at = $dt;
 
             $categorie->save();
-        } else {
-            return back();
+        }
+        else {
+            echo '<script language="javascript">';
+            echo 'alert("Niet alle velden zijn ingevuld!")';
+            echo '</script>';
         }
 
         return redirect()->action('CMSController@indexBeheer');
@@ -136,22 +149,29 @@ class CMSController extends Controller
 
     public function editCategorie($id)
     {
-        $categorie = Categoriee::findorfail($id);
+        if (!empty($input['categorie_naam']) && !empty($input['categorie_beschrijving'])) {
+            $categorie = Categoriee::findorfail($id);
 
-        $input = Request::all();
+            $input = Request::all();
 
-        $categorie->naam = $input['categorie_naam'];
-        $categorie->beschrijving = $input['categorie_beschrijving'];
-        $categorie->parent_id = $input['categorie_parent_id'];
+            $categorie->naam = $input['categorie_naam'];
+            $categorie->beschrijving = $input['categorie_beschrijving'];
+            $categorie->parent_id = $input['categorie_parent_id'];
 
-        $dt = new DateTime();
-        $dt->format('Y-m-d');
+            $dt = new DateTime();
+            $dt->format('Y-m-d');
 
-        $categorie->updated_at = $dt;
+            $categorie->updated_at = $dt;
 
-        $categorie->save();
+            $categorie->save();
+        }
+        else {
+            echo '<script language="javascript">';
+            echo 'alert("Niet alle velden zijn ingevuld!")';
+            echo '</script>';
+        }
 
-        return back();
+        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function deleteCategorie($id)
