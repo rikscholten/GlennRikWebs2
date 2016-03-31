@@ -9,10 +9,10 @@
 
                     <div class="panel-body">
                         <form action="http://localhost/GlennRikWebs2/public/blog/add" method="get" id ="h">
-                            naam:      <input type="text" name="naam"><br>
-                            <textarea form="h" name="text" >tekst</textarea><br>
-                            onderwerp: <input type="text" name="onderwerp"><br>
-                            uren:      <input type="text" name="uren"><br>
+                            Naam:  <br>    <input type="text" name="naam"><br>
+                           Tekst: <br><textarea form="h" name="text" >tekst</textarea><br>
+                            Onderwerp:<br> <input type="text" name="onderwerp"><br>
+                            Uren: <br>     <input type="text" name="uren"><br>
                             <input type="submit" value="Submit">
                         </form>
                     </div>
@@ -21,11 +21,11 @@
 
                     <div class="panel-body">
                        @foreach($blogs as $blog)
-                         <b>  schrijver :</b> {{$blog->naam}}<br><br>
-                             <b>   onderwerp :</b> {{$blog->onderwerp}}<br>
-                                 <b>   text : </b>{{$blog->text}}<br><br>
-                                     <b>  aantal uren :</b> {{$blog->aantal_uur}}<br>
-                                         <b>  gepost op  :</b> {{$blog->created_at}}<br>
+                         <b>  schrijver :</b><br> {{$blog->naam}}<br><br>
+                             <b>   onderwerp :</b><br> {{$blog->onderwerp}}<br>
+                                 <b>   text : </b><br>{{$blog->text}}<br><br>
+                                     <b>  aantal uren :</b><br> {{$blog->aantal_uur}}<br>
+                                         <b>  gepost op  :</b> <br>{{$blog->created_at}}<br>
 <hr>
 
 
