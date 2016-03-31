@@ -42,6 +42,10 @@
 
 
 </div>
+<form action="http://localhost/GlennRikWebs2/public/" method="get" id ="h">
+
+    <input type="submit" class="btn btn-success" value="Back to home">
+    </form>
 
 </div>
     @endsection

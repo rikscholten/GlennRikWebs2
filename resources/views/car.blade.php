@@ -67,7 +67,7 @@
     </div>
     <div>
             <h1 class="ui centered aligned header"> Totaal prijs: {{$prijs}}</h1>
-        <form action="http://localhost/GlennRikWebs2/public/car/dell" method="get">
+        <form action="http://localhost/GlennRikWebs2/public/car/afronden" method="get">
             <input class="btn btn-success" type="submit" value=" afrekenen">
         </form>
 
