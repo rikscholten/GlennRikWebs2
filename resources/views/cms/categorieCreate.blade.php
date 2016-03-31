@@ -9,9 +9,9 @@
                     <div class="panel-body">
                         <form>
                             Product naam:<br>
-                            <input type="text" name="product_naam"><br>
+                            <input type="text" name="categorie_naam"><br>
                             Beschrijving:<br>
-                            <input type="text" name="product_beschrijving"><br>
+                            <input type="text" name="categorie_beschrijving"><br>
 
 
                             <input type="submit" class="btn btn-primary" value="Aanmaken">

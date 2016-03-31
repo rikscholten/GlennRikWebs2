@@ -59,7 +59,7 @@ class CMSController extends Controller
         $input = Request::all();
 
         $product->naam = $input['product_naam'];
-        $product->description = $input['product_kortebeschrijving'];
+        $product->korte_beschrijving = $input['product_kortebeschrijving'];
         $product->beschrijving = $input['product_beschrijving'];
         $product->artiest = $input['product_artiestnaam'];
         $product->prijs = $input['product_prijs'];
@@ -99,10 +99,7 @@ class CMSController extends Controller
             $categorie = new Categoriee();
 
             $categorie->naam = $input['categorie_name'];
-            $categorie->korte_beschrijving = $input['categorie_name'];
             $categorie->beschrijving = $input['categorie_name'];
-            $categorie->artiest = $input['categorie_name'];
-            $categorie->prijs = $input['categorie_name'];
 
             $dt = new DateTime();
             $dt->format('Y-m-d');
@@ -124,11 +121,8 @@ class CMSController extends Controller
 
         $input = Request::all();
 
-        $categorie->naam = $input['product_naam'];
-        $categorie->description = $input['product_kortebeschrijving'];
-        $categorie->beschrijving = $input['product_beschrijving'];
-        $categorie->artiest = $input['product_artiestnaam'];
-        $categorie->prijs = $input['product_prijs'];
+        $categorie->naam = $input['categorie_naam'];
+        $categorie->beschrijving = $input['categorie_beschrijving'];
 
         $dt = new DateTime();
         $dt->format('Y-m-d');

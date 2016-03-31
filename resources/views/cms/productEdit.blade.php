@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Product toevoegen</div>
+                    <div class="panel-heading">Product aanpassen</div>
                     <div class="panel-body">
                         <form>
                             Product naam:<br>
@@ -19,7 +19,7 @@
                             Artiest:<br>
                             <input type="text" name="product_artiest"><br>
 
-                            <input type="submit" class="btn btn-primary" value="Aanmaken">
+                            <input type="submit" class="btn btn-primary" value="Aanpassen">
                         </form>
                     </div>
                 </div>
