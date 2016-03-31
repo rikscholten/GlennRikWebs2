@@ -46,24 +46,29 @@
                             </div>
 
                             <div id="tab2" class="tab-pane fade in active">
-                                <h2>User Beheer</h2>
+                                <h2>Categorieen Beheer</h2>
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
                                         <th>Naam</th>
-                                        <th>Email</th>
-                                        <th>Wachtwoord?</th>
+                                        <th>Korte beschrijving</th>
+                                        <th>Beschrijving</th>
+                                        <th>Prijs</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>hoi2</td>
-                                        <td>hoi2</td>
-                                        <td>hoi2</td>
-                                    </tr>
+                                    @foreach($categorieen as $categorieen)
+                                        <tr>
+                                            <td>{{$categorieen->naam}}</td>
+                                            <td>{{$categorieen->beschrijving}}</td>
+                                            <td><a href='/GlennRikWebs2/public/cms/categoriebeheer/edit/{{$categorieen ->id}}'><button class="btn-primary btn btn-sm">Aanpassen</button></a></td>
+                                            <td><a href='/GlennRikWebs2/public/cms/categoriebeheer/delete/{{$categorieen ->id}}'><button class="btn-danger btn btn-sm">Verwijderen</button></a></td></td>
+                                        </tr>
+
+                                    @endforeach
                                     </tbody>
                                 </table>
-
+                                <a href='/GlennRikWebs2/public/cms/categoriebeheer/create'><button class="btn btn-primary" >Categorie Aanmaken</button></a>
                             </div>
 
                         </div>

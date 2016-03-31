@@ -63,10 +63,17 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/product/{id?}', 'ProductController@product');
 
     Route::get('/cms', 'CMSController@indexBeheer');
-    Route::get('/cms/productbeheer/create', 'CMSController@create');
-    Route::get('/cms/productbeheer/delete', 'CMSController@delete');
-    Route::get('/cms/productbeheer/edit', 'CMSController@edit');
+    Route::get('/cms/productbeheer/create', 'CMSController@createProductWindow');
+    Route::get('/cms/productbeheer/delete/{id?}', 'CMSController@deleteProduct');
+    Route::get('/cms/productbeheer/edit', 'CMSController@editProductWindow');
+    Route::get('/cms/productbeheer/editProduct/{id?}', 'CMSController@editProduct');
     Route::get('/cms/productbeheer/createProduct', 'CMSController@createProduct');
+
+    Route::get('/cms/categoriebeheer/create', 'CMSController@createCategorieWindow');
+    Route::get('/cms/categoriebeheer/delete/{id?}', 'CMSController@deleteCategorie');
+    Route::get('/cms/categoriebeheer/edit', 'CMSController@editCategorieWindow');
+    Route::get('/cms/categoriebeheer/editCategorie/{id?}', 'CMSController@editCategorie');
+    Route::get('/cms/categoriebeheer/createCategorie', 'CMSController@createCategorie');
 
 });
 
