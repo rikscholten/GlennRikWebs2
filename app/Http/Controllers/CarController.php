@@ -25,6 +25,28 @@ class CarController extends Controller
 
         return view('car');
     }
+
+    public function user_info()
+    {
+
+
+        return view('user_adres_form');
+    }
+    public function offerte(Request $request)
+    {
+        $data['naam'] =$request->input('naam');
+        $data['achternaam'] =$request->input('achternaam');
+        $data['mail'] =$request->input('e-mail');
+        $data['adres'] =$request->input('adres');
+        $data['postcode'] =$request->input('postcode');
+        $data['stad'] =$request->input('stad');
+        $data['woonplaats'] =$request->input('woonplaats');
+        $data['products'] = session('car');
+
+
+        return view('offerte',$data);
+    }
+
     public function add(Request $request)
     {
 

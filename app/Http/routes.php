@@ -56,11 +56,18 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/car', 'CarController@car');
     Route::get('/car/add', 'CarController@add');
     Route::get('/car/dell', 'CarController@dell');
+    Route::get('/car/afronden', 'CarController@user_info');
+    Route::get('/car/offerte', 'CarController@offerte');
+
+
 
 
     Route::get('/home', 'HomeController@index');
     Route::get('/store', 'ProductController@store');
     Route::get('/product/{id?}', 'ProductController@product');
+
+
+
 
     Route::get('/cms', 'CMSController@indexBeheer');
     Route::get('/cms/productbeheer/create', 'CMSController@createProductWindow');
