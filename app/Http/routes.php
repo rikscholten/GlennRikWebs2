@@ -46,6 +46,12 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
+Route::get('upload', function() {
+    return View::make('upload_image_form');
+});
+Route::post('apply/upload', 'UploadController@upload');
+
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
