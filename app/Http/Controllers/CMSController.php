@@ -9,18 +9,11 @@ class CMSController extends Controller
 {
 
     public function indexBeheer(){
-        $productpage = 0;
         $products['products'] = Product::get();
         $categorieen['categorieen'] = Categoriee::get();
-        return view('cms.cms', $products, $categorieen, $productpage);
+        return view('cms.cms', $products, $categorieen);
     }
 
-    public function productBeheer(){
-        $productpage = 1;
-        $products['products'] = Product::get();
-        $categorieen['categorieen'] = Categoriee::get();
-        return view('cms.cms', $products, $categorieen, $productpage);
-    }
 
     public function createProductWindow()
     {
@@ -58,7 +51,9 @@ class CMSController extends Controller
             return redirect()->action('CMSController@indexBeheer');
 
         } else {
+
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
+            return back();
         }
 
     }
@@ -98,7 +93,7 @@ class CMSController extends Controller
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
-        }
+            return back();        }
     }
 
     public function deleteProduct($id)
@@ -142,6 +137,7 @@ class CMSController extends Controller
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
+            return back();
         }
 
     }
@@ -176,6 +172,7 @@ class CMSController extends Controller
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
+            return back();
         }
 
     }

@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <form action="http://localhost/GlennRikWebs2/public/car/offerte" method="get" id ="h">
-                            Naam:  <br>    <input type="text" name="naam"><br>
+                            Naam:  <br>    <input type="text" name="naam" value="{{\Illuminate\Support\Facades\Auth::user()->name}}"><br>
                             Achternaam:  <br>    <input type="text" name="achternaam"><br>
                             E-mail:  <br>    <input type="text" name="e-mail"><br>
                             Postcode:  <br>    <input type="text" name="postcode"><br>
