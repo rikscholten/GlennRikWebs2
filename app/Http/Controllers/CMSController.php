@@ -46,6 +46,9 @@ class CMSController extends Controller
             $product->updated_at = $dt;
 
             $product->save();
+
+            return redirect()->action('CMSController@indexBeheer');
+
         } else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
         }
@@ -81,6 +84,9 @@ class CMSController extends Controller
             $product->updated_at = $dt;
 
             $product->save();
+
+            return redirect()->action('CMSController@indexBeheer');
+
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
@@ -123,6 +129,8 @@ class CMSController extends Controller
             $categorie->updated_at = $dt;
 
             $categorie->save();
+
+            return redirect()->action('CMSController@indexBeheer');
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
@@ -154,6 +162,9 @@ class CMSController extends Controller
             $categorie->updated_at = $dt;
 
             $categorie->save();
+
+            return redirect()->action('CMSController@indexBeheer');
+
         }
         else {
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";

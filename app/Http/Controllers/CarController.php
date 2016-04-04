@@ -33,19 +33,27 @@ class CarController extends Controller
     }
     public function offerte(Request $request)
     {
-        $data['naam'] =$request->input('naam');
-        $data['achternaam'] =$request->input('achternaam');
-        $data['mail'] =$request->input('e-mail');
-        $data['adres'] =$request->input('adres');
-        $data['postcode'] =$request->input('postcode');
-        $data['stad'] =$request->input('stad');
-        $data['woonplaats'] =$request->input('woonplaats');
-        $data['prijs'] =session('prijs');
+        if (!empty($data['naam']) && !empty($data['achternaam']) && !empty($data['mail']) && !empty($data['adres']) && !empty($data['postcode'])
+        && !empty($data['stad'])&& !empty($data['woonplaats'])&& !empty($data['prijs'])) {
 
-        $data['products'] = session('car');
+            $data['naam'] = $request->input('naam');
+            $data['achternaam'] = $request->input('achternaam');
+            $data['mail'] = $request->input('e-mail');
+            $data['adres'] = $request->input('adres');
+            $data['postcode'] = $request->input('postcode');
+            $data['stad'] = $request->input('stad');
+            $data['woonplaats'] = $request->input('woonplaats');
+            $data['prijs'] = session('prijs');
+
+            $data['products'] = session('car');
+
+            return view('offerte',$data);
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
+        }
 
 
-        return view('offerte',$data);
     }
 
     public function add(Request $request)
