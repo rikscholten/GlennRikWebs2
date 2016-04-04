@@ -9,9 +9,17 @@ class CMSController extends Controller
 {
 
     public function indexBeheer(){
+        $productpage = 0;
         $products['products'] = Product::get();
         $categorieen['categorieen'] = Categoriee::get();
-        return view('cms.cms', $products, $categorieen);
+        return view('cms.cms', $products, $categorieen, $productpage);
+    }
+
+    public function productBeheer(){
+        $productpage = 1;
+        $products['products'] = Product::get();
+        $categorieen['categorieen'] = Categoriee::get();
+        return view('cms.cms', $products, $categorieen, $productpage);
     }
 
     public function createProductWindow()

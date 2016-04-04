@@ -10,10 +10,19 @@
 
                     <div class="panel-body">
 
+                        @if($productpage == 0)
+
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#tab2">Categorie beheer</a> </li>
                             <li><a data-toggle="tab" href="#tab1">Product beheer</a> </li>
                         </ul>
+                        @elseif($productpage = 1)
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab2">Categorie beheer</a> </li>
+                                <li><a data-toggle="tab" href="#tab1">Product beheer</a> </li>
+                            </ul>
+                        @endif
+
 
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade">
