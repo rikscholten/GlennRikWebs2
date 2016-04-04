@@ -20,9 +20,7 @@
                             <input type="text" name="product_artiestnaam"><br>
                             Image:<br>
                             <input type="text" name="product_image"><br>
-                            <form action="http://localhost/GlennRikWebs2/public/cms/productbeheer/upload" method="post" enctype="multipart/form-data">
-                                <label for="file">File:</label><input type="file" name="file"><button name="submit">Verzenden</button>
-                            </form>
+                       
                             Release Date:<br>
                             <input type="text" name="product_release_date"><br>
                             Categorie:<br>
