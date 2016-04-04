@@ -47,12 +47,9 @@ class CMSController extends Controller
 
             $product->save();
         } else {
-            echo '<script language="javascript">';
-            echo 'alert("Niet alle velden zijn ingevuld!")';
-            echo '</script>';
+            echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
         }
 
-        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function editProductWindow($id)
@@ -86,12 +83,8 @@ class CMSController extends Controller
             $product->save();
         }
         else {
-            echo '<script language="javascript">';
-            echo 'alert("Niet alle velden zijn ingevuld!")';
-            echo '</script>';
+            echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
         }
-
-        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function deleteProduct($id)
@@ -132,12 +125,9 @@ class CMSController extends Controller
             $categorie->save();
         }
         else {
-            echo '<script language="javascript">';
-            echo 'alert("Niet alle velden zijn ingevuld!")';
-            echo '</script>';
+            echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
         }
 
-        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function editCategorieWindow($id)
@@ -166,12 +156,9 @@ class CMSController extends Controller
             $categorie->save();
         }
         else {
-            echo '<script language="javascript">';
-            echo 'alert("Niet alle velden zijn ingevuld!")';
-            echo '</script>';
+            echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
         }
 
-        return redirect()->action('CMSController@indexBeheer');
     }
 
     public function deleteCategorie($id)
