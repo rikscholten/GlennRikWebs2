@@ -20,7 +20,7 @@
                             <input type="text" name="product_artiestnaam"><br>
                             Image:<br>
                             <input type="text" name="product_image"><br>
-                       
+
                             Release Date:<br>
                             <input type="text" name="product_release_date"><br>
                             Categorie:<br>
