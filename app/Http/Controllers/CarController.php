@@ -51,6 +51,7 @@ class CarController extends Controller
         }
         else{
             echo "<script type='text/javascript'>alert('Error! niet alle velden zijn ingevuld');</script>";
+            return back();
         }
 
 
