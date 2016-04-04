@@ -51,12 +51,14 @@ Route::get('upload', function() {
 });
 Route::post('apply/upload', 'UploadController@upload');
 
+Route::get('/blog', 'BlogController@blog');
+Route::get('/blog/add', 'BlogController@create_blog');
+
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/blog', 'BlogController@blog');
-    Route::get('/blog/add', 'BlogController@create_blog');
+
 
 
     Route::get('/car', 'CarController@car');
