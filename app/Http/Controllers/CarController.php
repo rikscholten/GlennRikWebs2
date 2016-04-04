@@ -33,8 +33,10 @@ class CarController extends Controller
     }
     public function offerte(Request $request)
     {
-        if(!empty($error)){
-            echo "<script type='text/javascript'>alert($error);</script>";
+        $error = false;
+
+        if($error){
+            echo "<script type='text/javascript'>alert('Error! Niet alle velden zijn ingevuld');</script>";
         }
 
         if (!empty($data['naam']) && !empty($data['achternaam']) && !empty($data['mail']) && !empty($data['adres']) && !empty($data['postcode'])
@@ -54,7 +56,7 @@ class CarController extends Controller
             return view('offerte',$data);
         }
         else{
-            $error = 'Error! niet alle velden zijn ingevuld';
+            $error = true;
             return back($error);
         }
 
